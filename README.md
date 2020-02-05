@@ -7,12 +7,12 @@ yarn install
 
 ### Compiles and hot-reloads for development
 ```
-yarn serve
+VUE_APP_ICINGA_API_URL=https://domain.tld/your/api/url yarn serve
 ```
 
 ### Compiles and minifies for production
 ```
-yarn build
+VUE_APP_ICINGA_API_URL=https://domain.tld/your/api/url yarn build
 ```
 
 ### Lints and fixes files
