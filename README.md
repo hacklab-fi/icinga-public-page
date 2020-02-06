@@ -1,24 +1,20 @@
 # icinga-public-page
 
-## Project setup
-```
-yarn install
-```
+Simple status page that runs at https://status.hacklab.fi/
 
-### Compiles and hot-reloads for development
-```
-VUE_APP_ICINGA_API_URL=http://localhost:8080/demo.json yarn serve
-```
+The data comes from icinga api (well a proxy script on top of icinga).
 
-### Compiles and minifies for production
-```
-VUE_APP_ICINGA_API_URL=http://localhost:8080/demo.json yarn build
-```
+# how to contribute
 
-### Lints and fixes files
-```
-yarn lint
-```
+* clone this repo
+* run yarn install
+* start a new branch
+* run test server
+  * ```VUE_APP_ICINGA_API_URL=http://localhost:8080/demo.json yarn serve```
+* make your changes
+* create a pull request
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+# deploying new version
+
+just run deploy.sh to get the new version running. Of course you need write access to the repo.
