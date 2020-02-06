@@ -2,7 +2,7 @@
 
 Simple status page that runs at https://status.hacklab.fi/
 
-The data comes from icinga api (well a proxy script on top of icinga).
+The data comes from icinga api (well a proxy script on top of icinga). See here https://github.com/OH6AD/oikopupu/blob/master/dist/icinga-public.php
 
 # how to contribute
 
