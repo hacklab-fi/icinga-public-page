@@ -10,12 +10,13 @@
         v-bind:key="index"
       >
         <h2 class="head" :class="item.state">
-          {{ key }}
           <!-- up / down -->
           <span v-if="item.state == 'UP'" class="icon" :class="item.state"
             >✔</span
           >
           <span v-else class="icon" :class="item.state">✗</span>
+
+          {{ key }}
 
           <span class="downtime" v-if="item.downtime">
             <span v-if="item.downtime.is_in_effect" class="icon now"
@@ -38,12 +39,13 @@
           v-for="(item, key, index) in item.services"
           v-bind:key="index"
         >
-          {{ key }}
           <!-- up / down -->
           <span v-if="item.state == 'OK'" class="icon" :class="item.state"
             >✔</span
           >
           <span v-else class="icon" :class="item.state">✗</span>
+
+          {{ key }}
 
           <!-- downtime info for service -->
           <span v-if="item.downtime" class="downtime">
@@ -83,7 +85,7 @@ export default {
     startPoll() {
       this.poll = setInterval(() => {
         this.$store.dispatch("refereshdata");
-      }, 1000 * 15);
+      }, 1000 * 60 * 5); // 15 minutes
     }
   },
   async created() {
