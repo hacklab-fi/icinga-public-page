@@ -21,7 +21,7 @@ export default new Vuex.Store({
       Vue.axios
         .get(process.env.VUE_APP_ICINGA_API_URL)
         .then(result => {
-          commit("SAVE_USERS", result.data);
+          commit("SAVE_DATA", result.data);
         })
         .catch(error => {
           throw new Error(`API ${error}`);
