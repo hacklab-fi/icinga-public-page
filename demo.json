@@ -1,0 +1,180 @@
+{
+  "component1": {
+    "state": "UP",
+    "acknowledged": false,
+    "is_flapping": false,
+    "state_type": "HARD",
+    "last_state_change": 1580861458,
+    "services": {
+      "apt": {
+        "state": "CRITICAL",
+        "acknowledged": false,
+        "last_state_change": 1580813695,
+        "is_flapping": false,
+        "state_type": "HARD"
+      },
+      "disk": {
+        "state": "OK",
+        "acknowledged": false,
+        "last_state_change": 1580871801,
+        "is_flapping": false,
+        "state_type": "HARD"
+      },
+      "dns": {
+        "state": "CRITICAL",
+        "acknowledged": false,
+        "last_state_change": 1580050576,
+        "is_flapping": false,
+        "state_type": "HARD",
+        "downtime": {
+          "comment": "will be done soonish ™",
+          "scheduled_start": 1580725656,
+          "scheduled_end": 1583234856,
+          "entry_time": 1580725672,
+          "is_in_effect": 0
+        }
+      },
+      "load": {
+        "state": "OK",
+        "acknowledged": false,
+        "last_state_change": 1580861549,
+        "is_flapping": false,
+        "state_type": "HARD"
+      }
+    }
+  },
+  "component2": {
+    "state": "DOWN",
+    "acknowledged": false,
+    "is_flapping": false,
+    "state_type": "HARD",
+    "last_state_change": 1551875843,
+    "services": {
+      "aprx": {
+        "state": "OK",
+        "acknowledged": false,
+        "last_state_change": 1556896071,
+        "is_flapping": false,
+        "state_type": "HARD"
+      }
+    },
+    "downtime": {
+        "comment": "Fixing things",
+        "scheduled_start": 1571608494,
+        "scheduled_end": 1603234494,
+        "entry_time": 1571608510,
+        "is_in_effect": 0
+      }
+  },
+  "component3": {
+    "state": "UP",
+    "acknowledged": false,
+    "is_flapping": false,
+    "state_type": "HARD",
+    "last_state_change": 1579013933,
+    "services": {
+      "apt": {
+        "state": "OK",
+        "acknowledged": false,
+        "last_state_change": 1579729936,
+        "is_flapping": false,
+        "state_type": "HARD"
+      },
+      "disk": {
+        "state": "OK",
+        "acknowledged": false,
+        "last_state_change": 1580729039,
+        "is_flapping": false,
+        "state_type": "HARD"
+      },
+      "load": {
+        "state": "OK",
+        "acknowledged": false,
+        "last_state_change": 1578937052,
+        "is_flapping": false,
+        "state_type": "HARD"
+      },
+      "procs": {
+        "state": "OK",
+        "acknowledged": false,
+        "last_state_change": 1578937088,
+        "is_flapping": false,
+        "state_type": "HARD"
+      },
+      "ssh": {
+        "state": "OK",
+        "acknowledged": false,
+        "last_state_change": 1580729006,
+        "is_flapping": false,
+        "state_type": "HARD"
+      },
+      "users": {
+        "state": "OK",
+        "acknowledged": false,
+        "last_state_change": 1580766748,
+        "is_flapping": false,
+        "state_type": "HARD"
+      }
+    }
+  },
+  "component4": {
+    "state": "UP",
+    "acknowledged": false,
+    "is_flapping": false,
+    "state_type": "HARD",
+    "last_state_change": 1580863769,
+    "services": {
+      "apt": {
+        "state": "OK",
+        "acknowledged": false,
+        "last_state_change": 1580954306,
+        "is_flapping": false,
+        "state_type": "HARD",
+        "downtime": {
+          "comment": "minor changes",
+          "scheduled_start": 1578903900,
+          "scheduled_end": 1610529900,
+          "entry_time": 1578903911,
+          "is_in_effect": 1
+        }
+      },
+      "ups": {
+        "state": "OK",
+        "acknowledged": false,
+        "last_state_change": 1580856808,
+        "is_flapping": false,
+        "state_type": "HARD"
+      },
+      "users": {
+        "state": "OK",
+        "acknowledged": false,
+        "last_state_change": 1580861394,
+        "is_flapping": false,
+        "state_type": "HARD"
+      }
+    }
+  },
+  "component5": {
+    "state": "DOWN",
+    "acknowledged": false,
+    "is_flapping": false,
+    "state_type": "HARD",
+    "last_state_change": 1568307915,
+    "services": {
+      "ssh": {
+        "state": "CRITICAL",
+        "acknowledged": false,
+        "last_state_change": 1568308147,
+        "is_flapping": false,
+        "state_type": "HARD"
+      }
+    },
+    "downtime": {
+      "comment": "tunketi tunk",
+      "scheduled_start": 1571608494,
+      "scheduled_end": 1603234494,
+      "entry_time": 1571608510,
+      "is_in_effect": 1
+    }
+  }
+}
