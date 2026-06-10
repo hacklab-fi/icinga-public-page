@@ -1,15 +1,12 @@
-import Vue from "vue";
+import { createApp } from "vue";
+import moment from "moment";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
-Vue.config.productionTip = false;
+const app = createApp(App);
 
-import moment from "moment";
-Vue.prototype.moment = moment;
+// Exposed as `moment` inside templates (used by Status.vue for downtime timestamps).
+app.config.globalProperties.moment = moment;
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount("#app");
+app.use(router).use(store).mount("#app");

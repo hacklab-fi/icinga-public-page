@@ -1,0 +1,47 @@
+name: Deploy to GitHub Pages
+
+# Build fresh and publish on every push to the default branch. This replaces the old
+# deploy.sh (which force-pushed a locally-built dist/ to the gh-pages branch).
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+# Permissions the official Pages deploy actions need.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never run two deploys at once; let a newer push supersede an in-flight one.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      # VITE_ICINGA_API_URL comes from the committed .env (single source of truth).
+      - run: npm run build
+      # History-mode SPA fallback: serve index.html for unknown deep links (e.g. /about).
+      - run: cp dist/index.html dist/404.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

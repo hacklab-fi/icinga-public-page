@@ -1,0 +1,23 @@
+# Disposable build/dev sandbox for this repo.
+#
+# Threat model: we ASSUME package install/build code (including npm lifecycle scripts) may
+# be hostile, and we let it run normally — the protection is the container boundary, not
+# script-blocking. The sandbox mounts only this repo, runs non-root with dropped caps, and
+# carries none of your host secrets (no ~/.ssh, no ~/.npmrc, no credentials). So a malicious
+# postinstall executes against an empty box, not your keys.
+#
+# Base is the plain node:24 LTS tag (current LTS as of 2026). We trust the official Node
+# image tags — if those were compromised the blast radius is the whole ecosystem, not us.
+FROM node:24-bookworm-slim
+
+# Point HOME and the package-manager caches at a writable tmpfs, because sandbox.sh mounts
+# the root filesystem read-only at runtime. The image already ships a non-root `node` user
+# (uid/gid 1000) — never run as root.
+ENV HOME=/tmp \
+    npm_config_cache=/tmp/.npm \
+    npm_config_fund=false \
+    npm_config_update_notifier=false \
+    CI=true
+
+WORKDIR /app
+USER node
