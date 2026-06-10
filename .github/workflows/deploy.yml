@@ -32,7 +32,7 @@ jobs:
       - run: npm run build
       # History-mode SPA fallback: serve index.html for unknown deep links (e.g. /about).
       - run: cp dist/index.html dist/404.html
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
