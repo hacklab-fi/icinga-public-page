@@ -21,6 +21,8 @@ export default createStore({
           //   <br /><b>Warning</b>: ... icinga-public.php on line 121<br />{ ...json... }
           // That makes the response invalid JSON, so axios hands us the raw string instead
           // of a parsed object. Strip anything before the first '{' and parse defensively.
+          // Fixed upstream in OH6AD/oikopupu#6 (merged, awaiting deploy); kept here as a
+          // belt-and-suspenders guard — once the server serves clean JSON this branch no-ops.
           const raw = result.data;
           const data =
             typeof raw === "string"
