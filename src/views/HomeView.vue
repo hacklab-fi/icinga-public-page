@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-    <Status />
+    <StatusPage />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Status from "@/components/Status.vue";
+import StatusPage from "@/components/StatusPage.vue";
 
 export default {
-  name: "home",
+  name: "HomeView",
   components: {
-    Status
+    StatusPage
   }
 };
 </script>

@@ -71,7 +71,7 @@
 import { mapGetters } from "vuex";
 
 export default {
-  name: "Status",
+  name: "StatusPage",
   data() {
     return {
       poll: null
@@ -85,15 +85,15 @@ export default {
     startPoll() {
       this.poll = setInterval(() => {
         this.$store.dispatch("refereshdata");
-      }, 1000 * 60 * 5); // 15 minutes
+      }, 1000 * 60 * 5); // 5 minutes
     }
   },
-  async created() {
+  created() {
     // do a initial sync and start polling the api
-    this.$store.dispatch("refereshdata");
+    this.$store.dispatch("refreshData");
     this.startPoll();
   },
-  async beforeDestroy() {
+  beforeUnmount() {
     // clear our timer
     clearInterval(this.poll);
   }
