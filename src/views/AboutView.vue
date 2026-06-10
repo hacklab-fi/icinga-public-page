@@ -20,6 +20,7 @@
 <style scoped>
 .about {
   max-width: 640px;
+  margin: 0 auto;
   padding: 1.5rem 1.75rem;
   background: var(--card);
   border: 1px solid var(--border);
