@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: 26
           cache: npm
       - run: npm ci
       # VITE_ICINGA_API_URL comes from the committed .env (single source of truth).

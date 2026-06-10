@@ -6,9 +6,10 @@
 # carries none of your host secrets (no ~/.ssh, no ~/.npmrc, no credentials). So a malicious
 # postinstall executes against an empty box, not your keys.
 #
-# Base is the plain node:24 LTS tag (current LTS as of 2026). We trust the official Node
-# image tags — if those were compromised the blast radius is the whole ecosystem, not us.
-FROM node:24-bookworm-slim
+# Base is the plain node:26 tag (Node "Current"; goes Active LTS ~Oct 2026). We trust the
+# official Node image tags — if those were compromised the blast radius is the whole
+# ecosystem, not us.
+FROM node:26-bookworm-slim
 
 # Point HOME and the package-manager caches at a writable tmpfs, because sandbox.sh mounts
 # the root filesystem read-only at runtime. The image already ships a non-root `node` user
