@@ -5,11 +5,13 @@ const API_URL = import.meta.env.VITE_ICINGA_API_URL;
 
 export default createStore({
   state: {
-    data: {}
+    data: {},
+    updatedAt: null
   },
   mutations: {
     SAVE_DATA(state, data) {
       state.data = data;
+      state.updatedAt = Date.now();
     }
   },
   actions: {
@@ -36,6 +38,7 @@ export default createStore({
     }
   },
   getters: {
-    data: state => state.data
+    data: state => state.data,
+    updatedAt: state => state.updatedAt
   }
 });
